@@ -165,69 +165,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 
 }
 
-//void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
-//
-//
-//	uint16_t size = 0;
-//
-//	size = sprintf(Data, "%s", rx_buffer);
-//	if(Data[0] == 'r' || Data[1] == 'R'){
-//		time.Hours = 0;
-//		time.Minutes = 0;
-//		time.Seconds = 0;
-//		HAL_RTC_SetDate(&hrtc,&date,RTC_FORMAT_BIN);
-//		HAL_RTC_SetTime(&hrtc,&time,RTC_FORMAT_BIN);
-//		cnt = 0;
-//		distance = 0.0;
-//		GPS = L76X_Gat_GNRMC();
-//		longitude = GPS.Lon;
-//		latitude = GPS.Lat;
-//		current_speed = 0.0;
-//		avg_speed = 0.0;
-//		total_distance = 0.0;
-//	}
-//	if(Data[0] == 'g' || Data[1] == 'G'){
-//		for(cnt=0; cnt < 5; cnt++){
-//			uint8_t data[50] = "";
-//			uint16_t size = 0;
-//			switch (cnt) {
-//				case 0: {
-//					size = sprintf(data, "Temperature: %.2f\n\r", temperature);
-//					break;
-//				}
-//				case 1: {
-//					size = sprintf(data, "Pressure: %.2f\n\r", presure);
-//					break;
-//				}
-//				case 2: {
-//					size = sprintf(data, "Humidity: %.2f\n\r", humidity);
-//					break;
-//				}
-//				case 3: {
-//					size = sprintf(data, "Speed: %.2f\n\r", current_speed);
-//					break;
-//				}
-//				case 4: {
-//					size = sprintf(data, "AvgSpeed: %.2f\n\r", avg_speed);
-//					break;
-//				}
-//				case 5: {
-//					size = sprintf(data, "Distance: %.2f\n\r", total_distance);
-//					break;
-//				}
-//			}
-//
-//			HAL_UART_Transmit_IT(&huart6, data, size);
-//		}
-//		Data[0] = 0;
-////		++cnt;
-////		if (cnt > 5) {
-////			cnt = 0;
-////		}
-//	}
-//	HAL_UART_Receive_IT(&huart6, rx_buffer, 10);
-//
-//}
+
 /* USER CODE END 0 */
 
 /**
@@ -268,7 +206,6 @@ int main(void)
 	//MX_USART1_UART_Init();
 	HAL_TIM_Base_Start_IT(&htim10);
 	MX_USART2_UART_Init();
-	HAL_UART_Receive_IT(&huart6,rx_buffer,10);
 	/* USER CODE BEGIN 2 */
 
 	DEV_Uart_SendByte('1');
@@ -505,7 +442,7 @@ static void MX_USART6_UART_Init(void)
 
   /* USER CODE END USART6_Init 1 */
   huart6.Instance = USART6;
-  huart6.Init.BaudRate = 115200;
+  huart6.Init.BaudRate = 9600;
   huart6.Init.WordLength = UART_WORDLENGTH_8B;
   huart6.Init.StopBits = UART_STOPBITS_1;
   huart6.Init.Parity = UART_PARITY_NONE;

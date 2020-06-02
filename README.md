@@ -22,6 +22,8 @@ Aby móc odczytać wartości mierzonych parametrów należy połączyć się prz
 
 <h2>Schemat</h2>
 Schemat dostępny jest <a href="https://easyeda.com/account/project/setting/basic?project=7c6d7a4b6fe64aad8e73e3d042019d24">tutaj.</a>
+
+
 ![Schemat][idea]
 
 ![Odczyt danych][comunication]

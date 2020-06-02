@@ -26,5 +26,5 @@ Aby móc odczytać wartości mierzonych parametrów należy połączyć się prz
 ![Odczyt danych][comunication]
 
 
-[idea]: https://github.com/Kontowicz/ASW/blob/master/idea.PNG
+[idea]: https://github.com/Kontowicz/ASW/blob/master/idea.jpg
 [comunication]: https://github.com/Kontowicz/ASW/blob/master/result.jpg

@@ -21,7 +21,8 @@ Aby móc odczytać wartości mierzonych parametrów należy połączyć się prz
 </ul> 
 
 <h2>Schemat</h2>
-![Schemat ideowy][idea]
+
+![Schemat][idea]
 
 ![Odczyt danych][comunication]
 

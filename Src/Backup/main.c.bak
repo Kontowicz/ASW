@@ -102,21 +102,21 @@ double calculate_distance(double lat1, double long1, double lat2, double long2) 
 	return d;
 }
 
-//void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-//	if(GPIO_Pin == USER_BUTTON_Pin){
-//		total_distance = 0;
-//		distance = 0;
-//		avg_speed = 0;
-//		cnt = 0;
-//		longitude = GPS.Lon;
-//		latitude = GPS.Lat;
-//		time.Hours = 0;
-//		time.Minutes = 0;
-//		time.Seconds = 0;
-//		HAL_RTC_SetDate(&hrtc, &date,RTC_FORMAT_BIN);
-//		HAL_RTC_SetTime(&hrtc,&time,RTC_FORMAT_BIN);
-//	}
-//}
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+	if(GPIO_Pin == USER_BUTTON_Pin){
+		total_distance = 0;
+		distance = 0;
+		avg_speed = 0;
+		cnt = 0;
+		longitude = GPS.Lon;
+		latitude = GPS.Lat;
+		time.Hours = 0;
+		time.Minutes = 0;
+		time.Seconds = 0;
+		HAL_RTC_SetDate(&hrtc, &date,RTC_FORMAT_BIN);
+		HAL_RTC_SetTime(&hrtc,&time,RTC_FORMAT_BIN);
+	}
+}
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	if(htim->Instance == TIM10){
@@ -535,12 +535,22 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(BLUE_LED_GPIO_Port, BLUE_LED_Pin, GPIO_PIN_SET);
 
+  /*Configure GPIO pin : USER_BUTTON_Pin */
+  GPIO_InitStruct.Pin = USER_BUTTON_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(USER_BUTTON_GPIO_Port, &GPIO_InitStruct);
+
   /*Configure GPIO pin : BLUE_LED_Pin */
   GPIO_InitStruct.Pin = BLUE_LED_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(BLUE_LED_GPIO_Port, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI0_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI0_IRQn);
 
 }
 

@@ -9,7 +9,7 @@ Projekt komputera rowerowego pozwalającego na monitorowanie parametrów jazdy o
   <li>pomiar ciśnienia atmosferycznego,</li>
   <li>pomiar wilgotności powietrza.</li>
 </ul>
-Aby móc odczytać wartości mierzonych parametrów należy połączyć się przy pomocy telefony za pomocą Bluetooth. Urządzenie na bierząco wysyła aktualne dane. Rozpoczęcie nowego okresu pomiarowego sygnalizowane jest przez naciśnięcie niebieskiego przycisku zarezerwowanego dla użytkownika, zdarzenie to resetuje wartości prędkości średniej, prędkości chwilowej oraz dystansu. Do odczytywania wysyłanych danych na telefonie korzystałem z aplikacji: https://play.google.com/store/apps/details?id=com.punchthrough.lightblueexplorer&hl=pl
+Aby móc odczytać wartości mierzonych parametrów należy połączyć się przy pomocy telefony za pomocą Bluetooth. Urządzenie na bieżąco wysyła aktualne dane. Rozpoczęcie nowego okresu pomiarowego sygnalizowane jest przez naciśnięcie niebieskiego przycisku zarezerwowanego dla użytkownika, zdarzenie to resetuje wartości prędkości średniej, prędkości chwilowej oraz dystansu. Do odczytywania wysyłanych danych na telefonie korzystałem z aplikacji: https://play.google.com/store/apps/details?id=com.punchthrough.lightblueexplorer&hl=pl
 
 <h2>Wykorzystane elementy:</h2>
 <ul>

@@ -4,7 +4,6 @@ Projekt komputera rowerowego pozwalającego na monitorowanie parametrów jazdy o
   <li>pomiar prędkości chwilowej,</li>
   <li>pomiar prędkości średniej na trasie,</li>
   <li>pomiar przebytego dystansu,</li>
-  <li>czas trwania jazdy,</li>
 
   <li>pomiar temperatury,</li>
   <li>pomiar ciśnienia atmosferycznego,</li>
